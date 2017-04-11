@@ -1,20 +1,28 @@
-# PhoenixCrud
+# Phoenix To-Do App with Nanobox
 
-To start your Phoenix app:
+This is a simple to-do built with [Phoenix](http://www.phoenixframework.org/) and setup to be used with [Nanobox](https://nanobox.io).
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
-  * Start Phoenix endpoint with `mix phoenix.server`
+## Up and Running
+To get this app up and running locally, [download and install Nanobox](https://dashboard.nanobox.io/download), then run the following:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+```bash
+# clone the project
+git clone https://github.com/sanderson/phoenix-todo.git
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+# cd into the project
+cd phoenix-todo
 
-## Learn more
+# add a convenient way to access the app from a browser
+nanobox dns add local phoenixtodo.dev
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+# start nanobox and build the dev environment
+nanobox run
+
+# seed the database
+mix ecto.create && mix ecto.migrate
+
+# start the app
+mix phoenix.server
+```
+
+The app will then be available at [phoenixtodo.dev:4000](http://phoenixtodo.dev:4000).
