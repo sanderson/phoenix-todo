@@ -26,3 +26,12 @@ mix phoenix.server
 ```
 
 The app will then be available at [phoenixtodo.dev:4000](http://phoenixtodo.dev:4000).
+
+## Deploying to Production
+This app is preconfigured to run in production with Nanobox, but you will need to add a `SECRET_KEY_BASE` environment variable in order to successfully add to-do items. This can be done in the Nanobox dashboard, or with the `nanobox evar` command.
+
+```
+nanobox evar add SECRET_KEY_BASE='someuniquekey'
+```
+
+More information is available in the [Environment Variable documentation](https://docs.nanobox.io/app-config/environment-variables/#custom-environment-variables).
